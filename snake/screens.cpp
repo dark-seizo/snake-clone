@@ -322,7 +322,6 @@ void GameOverScreen::Draw(sf::RenderWindow &window)
 
 void GameOverScreen::readHighScores(void)
 {
-    //std::vector<HighScore> vec;
     std::ifstream hsData(highScoreFile);
     if(hsData.is_open())
     {
@@ -355,7 +354,7 @@ void GameOverScreen::readHighScores(void)
     
     //if the high score file is not full, fill it in with zeros
     if(mHighscores.size() < 5)
-        for(unsigned int i = mHighscores.size() - 1; i < 5; ++i)
+        for(unsigned int i = mHighscores.size(); i <= 5; ++i)
         {
             HighScore zeroScore;
             mHighscores.push_back(zeroScore);
